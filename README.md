@@ -1,4 +1,12 @@
 # django_deploy_with_ansible
+
+#how to add this repository to a django-project
+#need the directory ansible-deploymnet at top level with file pass.yml in ansible-deployment/env_vars directory
+# go to ansible-deployment directory and 
+git clone  <git remote url ending with .git>  .
+
+ 
+
 Implementing on an Ubuntu VPS
 : at the development node:
  -  Consider upgrading ansible to latest version (>1.8 was needed) using ppa:ansible/ansible 
