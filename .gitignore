@@ -1,0 +1,3 @@
+*.py[co]
+env_vars/pass.yml
+

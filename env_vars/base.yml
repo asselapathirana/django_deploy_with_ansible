@@ -1,0 +1,7 @@
+---
+
+git_repo: https://github.com/asselapathirana/djangog.git
+project_name: djangog
+application_name: mysite
+#version: vps_test
+version: HEAD
