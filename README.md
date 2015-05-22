@@ -1,16 +1,14 @@
 # django_deploy_with_ansible
 
 #how to add this repository to a django-project
-#need the directory ansible-deploymnet at top level with file pass.yml in ansible-deployment/env_vars directory
-# go to ansible-deployment directory and 
-git clone  <git remote url ending with .git>  .
+1. at the django project directory  
+git clone  <git remote url ending with .git> deploy
+cp pass.yml deploy/env_vars #(if pass.yml exists) 
+if not create deploy/env_vars/pass.yml using template given in the directory. 
 
- 
 
-Implementing on an Ubuntu VPS
-: at the development node:
- -  Consider upgrading ansible to latest version (>1.8 was needed) using ppa:ansible/ansible 
-: 
+
+Implementing on an Ubuntu VPS : at the development node: -  Consider upgrading ansible to latest version (>1.8 was needed) using ppa:ansible/ansible : 
 2. edit files ./development and ./env_vars/pass.yml
 (./ed env_vars/pass.yml and change the root password (supassword). )
 
