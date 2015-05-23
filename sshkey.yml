@@ -5,7 +5,7 @@
 
   vars_files:
     - env_vars/sshkey.yml
-    - env_vars/pass.yml # always use last
+    - ../pass.yml # always use last
 
   
   tasks:

@@ -2,9 +2,9 @@
 env=dev
 
 [webservers]
-testa.pathirana.net
+test.pathirana.net
 
 [dbservers]
-testa.pathirana.net
+test.pathirana.net
 
 

@@ -11,7 +11,7 @@ Implementing on an Ubuntu VPS
 : at the development node:
  -  Consider upgrading ansible to latest version (>1.8 was needed) using ppa:ansible/ansible 
 : 
-2. edit files ./development and ./env_vars/pass.yml
+2. edit files ./development and ../pass.yml
 (./ed env_vars/pass.yml and change the root password (supassword). )
 
 ssh-keygen -f "/home/pathirana/.ssh/known_hosts" -R  <host> 
@@ -29,3 +29,14 @@ ansible-playbook -i development sshkey.yml -u root  --vault-password-file ~/.vau
 
 ansible-playbook -i development  site.yml --vault-password-file ~/.vault_pass.txt 
 (or use ./setup)
+
+# ssl certificate
+1. Create a ssl certificate (e.g. Using StartSSL) and download it (ssl.key.encyrpted). Download certificate as ssl.crt.mine
+2. Decrypt the private key by using the password you entered when you created your key:
+openssl rsa -in ssl.key.encrypted -out /etc/nginx/conf/ssl.key
+3. download the signers certificte
+wget http://www.startssl.com/certs/sub.class1.server.ca.pem
+cat it together with ssl.crt.mine
+cat ssl.crt.mine sub.class1.server.ca.pem > /etc/nginx/conf/ssl.crt 
+
+Now point to these two files (ssl.key, ssl.crt) in ../pass.yml (ssl_key_file, ssl_crt_file)
