@@ -15,9 +15,14 @@ application_name: mysite
 #version: vps_test
 version: HEAD
 
-ssl_crt_file="~/ssl_crt"
-ssl_key_file="~/ssl_key"
+ssl_crt_file: "~/ssl_crt"
+ssl_key_file: "~/ssl_key"
 
 ssl_crt: "{{ lookup('file', ssl_crt_file) }}"
 ssl_key: "{{ lookup('file', ssl_key_file) }}"
 ssl_key_passwd: passwd
+
+py_ver: 3.4 
+# for python 2.7 this should be 2.7
+py_v: 3     
+# for python2.x leave this empty!

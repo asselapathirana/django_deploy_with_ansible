@@ -5,6 +5,7 @@
 
   vars_files:
     - env_vars/sshkey.yml
+    - ./pass_ex.yml # unencrypted example
     - ../pass.yml # always use last
 
   

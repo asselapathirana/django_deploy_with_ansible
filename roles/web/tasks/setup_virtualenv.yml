@@ -4,8 +4,8 @@
 #  command: virtualenv-3.4 {{ virtualenv_path }}  --python=/usr/bin/pyton3 --no-site-packages
 #           creates={{ virtualenv_path }}/bin/activate
 
-- name: Make sure python 3.4 virtual env is installed and gunicorn is there. 
-  pip: virtualenv={{ virtualenv_path }} virtualenv_command=/usr/local/bin/virtualenv-3.4 name=gunicorn 
+- name: Make sure python {{py_ver}} virtual env is installed and gunicorn is there. 
+  pip: virtualenv={{ virtualenv_path }} virtualenv_command=/usr/local/bin/virtualenv-{{py_ver}} name=gunicorn 
   tags: py 
 
 

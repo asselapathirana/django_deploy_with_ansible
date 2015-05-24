@@ -11,6 +11,7 @@
   vars_files:
     - env_vars/base.yml
     - env_vars/vagrant.yml
+    - ./pass.yml 
     - ../pass.yml # always use last
 
   roles:
