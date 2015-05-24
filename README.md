@@ -17,6 +17,22 @@ ssh-keygen -f "/home/pathirana/.ssh/known_hosts" -R  <host>
 apt-get update
 apt-get install sshkey python-minimal sudo pip
 
+3.  you have to make sure database and STATICFILES settings in django settings file should be, so:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': os.getenv('DATABASE_NAME', 'anyname'),
+            'USER': os.getenv('DATABASE_USER', 'anyname'),
+            'PASSWORD': os.getenv('DATABASE_PASSWORD', 'password'),
+            'HOST': os.getenv('DATABASE_HOST', '127.0.0.1'),
+            'PORT': os.getenv('DATABASE_PORT', '5432'),
+        }
+    }    
+
+   STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, '../static'))
+   # ../static part might need tweaking depending on django directory structure
+
+
 
 #create user remoteuser
 ansible-playbook -i development sshkey.yml -u root  --vault-password-file ~/.vault_pass.txt
