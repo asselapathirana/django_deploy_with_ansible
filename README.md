@@ -7,7 +7,8 @@ Implementing on an Ubuntu VPS
 1. at the django project directory  
 git clone  <git remote url ending with .git> deploy
 
-2. edit files ./development and ../pass.yml (if pass.yml is encrypted use ./ed ../pass.yml)
+2. edit files ../development and ../pass.yml (if pass.yml is encrypted use ./ed ../pass.yml)
+(if there are no such files in the django project, copy from the templates provided in this drectory)
 =======
 
 ssh-keygen -f "/home/pathirana/.ssh/known_hosts" -R  <host> 
