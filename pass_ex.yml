@@ -24,7 +24,8 @@ ssl_key_file: "~/ssl_key"
 py_ver: 3.4 
 # for python 2.7 this should be 2.7
 py_v: 3     
-# for python2.x leave this empty!
+#^ for python2.x leave this empty!
+pip_command: pip3
 
 db_user: "{{ application_directory }}"
 db_name: "{{ application_directory }}"

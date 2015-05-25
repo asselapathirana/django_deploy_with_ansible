@@ -31,6 +31,10 @@
     - supervisor
   tags: packages
 
-- name: Install virtualenv3
+- name: Install virtualenv3 (might not be needed, but ..)
   pip: name=virtualenv executable=pip3
+  tags: packages
+
+- name: Install virtualenv2 (might not be needed, but ..)
+  pip: name=virtualenv executable=pip2
   tags: packages
