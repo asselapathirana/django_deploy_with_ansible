@@ -1,3 +1,7 @@
+Works with both python2 and python3 
+
+Doesnot work with configurations where wsgi.py, staticroot etc. are in non-standard places (then need manual tweaking)
+
 # django_deploy_with_ansible
 Implementing on an Ubuntu VPS
 : at the development node:
