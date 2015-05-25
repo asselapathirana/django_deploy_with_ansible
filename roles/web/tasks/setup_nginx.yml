@@ -5,19 +5,19 @@
   tags: packages
 
 - name: Copy the SSL certificate to the remote server
-  copy: content="{{ ssl_crt }}" dest={{ ssl_dest_dir }}/{{ application_name }}.crt
+  copy: content="{{ ssl_crt }}" dest={{ ssl_dest_dir }}/{{ application_directory }}.crt
   notify: restart nginx
   tags: nginx.ssl
 
 - name: Copy the SSL private key to the remote server
-  copy: content="{{ ssl_key }}" dest={{ ssl_dest_dir }}/{{ application_name }}.key mode=0600
+  copy: content="{{ ssl_key }}" dest={{ ssl_dest_dir }}/{{ application_directory }}.key mode=0600
   notify: restart nginx
   tags: nginx.ssl
 
 
 - name: Create the Nginx configuration file
   template: src=nginx_site_config.j2
-            dest=/etc/nginx/sites-available/{{ application_name }}
+            dest=/etc/nginx/sites-available/{{ application_directory }}
             backup=yes
   notify: reload nginx
   tags: nginx.conf
@@ -28,9 +28,9 @@
   notify: reload nginx
 
 - name: Ensure that the application site is enabled
-  command: ln -s /etc/nginx/sites-available/{{ application_name }}
-           /etc/nginx/sites-enabled/{{ application_name }}
-           creates=/etc/nginx/sites-enabled/{{ application_name }}
+  command: ln -s /etc/nginx/sites-available/{{ application_directory }}
+           /etc/nginx/sites-enabled/{{ application_directory }}
+           creates=/etc/nginx/sites-enabled/{{ application_directory }}
   notify: reload nginx
 
 - name: Ensure Nginx service is started

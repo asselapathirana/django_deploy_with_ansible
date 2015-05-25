@@ -1,7 +1,7 @@
 ---
 
 # Application settings.
-virtualenv_path: "/webapps/{{ application_name }}"
+virtualenv_path: "/webapps/{{ application_directory }}"
 project_path: "{{ virtualenv_path }}/{{ project_name }}"
 application_log_dir: "{{ virtualenv_path }}/logs"
 application_log_file: "{{ application_log_dir }}/gunicorn_supervisor.log"
@@ -9,7 +9,7 @@ requirements_file: "{{ project_path }}/requirements.txt"
 
 
 # Gunicorn settings
-gunicorn_user: "{{ application_name }}"
+gunicorn_user: "{{ application_directory }}"
 gunicorn_group: webapps
 
 
@@ -20,7 +20,7 @@ nginx_access_log_file: "{{ application_log_dir }}/nginx_access.log"
 nginx_error_log_file: "{{ application_log_dir }}/nginx_error.log"
 nginx_static_dir: "{{ virtualenv_path }}/static/"
 nginx_media_dir: "{{ virtualenv_path }}/media/"
-nginx_wsgi_server_name: "{{application_name}}_server"
+nginx_wsgi_server_name: "{{application_directory}}_server"
 
 # Django Environment variables
 django_environment:

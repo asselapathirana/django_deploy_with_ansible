@@ -2,9 +2,12 @@
 
 - name: restart application
   supervisorctl: name={{ application_name }} state=restarted
+  tags: reload
 
 - name: restart nginx
   service: name=nginx state=restarted enabled=yes
+  tags: reload
 
 - name: reload nginx
   service: name=nginx state=reloaded
+  tags: reload

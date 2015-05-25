@@ -9,7 +9,10 @@ supassword: h8RsydhmL
 
 git_repo: https://github.com/asselapathirana/djangog.git
 project_name: djangog
-application_name: mysite
+application_directory: mysite
+# ^ this is the directory where the application will be installed. Need not to be the django application name (see below)
+application_name : mysite 
+# this should match with your django app name that would run 
 #version: vps_test
 version: HEAD
 # Database settings.
@@ -23,8 +26,8 @@ py_ver: 3.4
 py_v: 3     
 # for python2.x leave this empty!
 
-db_user: "{{ application_name }}"
-db_name: "{{ application_name }}"
+db_user: "{{ application_directory }}"
+db_name: "{{ application_directory }}"
 
 ssl_crt: "{{ lookup('file', ssl_crt_file) }}"
 ssl_key: "{{ lookup('file', ssl_key_file) }}"

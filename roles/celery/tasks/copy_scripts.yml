@@ -9,9 +9,9 @@
   tags:
     - celery
 
-- name: Create the {{ celery_application_name }} script file
+- name: Create the {{ celery_application_directory }} script file
   template: src={{ celery_template_file }}
-            dest={{ celery_scripts_dir }}/{{ celery_application_name }}_start
+            dest={{ celery_scripts_dir }}/{{ celery_application_directory }}_start
             owner={{ celery_user }}
             group={{ celery_group }}
             mode=0755

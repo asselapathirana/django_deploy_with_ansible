@@ -1,6 +1,6 @@
 ---
 
-- name: Provision a {{ application_name }} web server
+- name: Provision a {{ application_directory }} web server
   hosts: webservers
   sudo: yes
   sudo_user: root

@@ -16,7 +16,7 @@ ssh-keygen -f "/home/pathirana/.ssh/known_hosts" -R  <host>
 # if the vps is minimal, there might be the need to manually login and install python (2.7), sshkey and sudo on remote machines
 # login to the remote and 
 apt-get update
-apt-get install sshkey python-minimal sudo pip
+apt-get install python-minimal sudo python-pip
 
 3.  you have to make sure database and STATICFILES settings in django settings file should be, so:
     DATABASES = {

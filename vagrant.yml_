@@ -1,6 +1,6 @@
 ---
 
-- name: Create a {{ application_name }} virtual machine via vagrant
+- name: Create a {{ application_directory }} virtual machine via vagrant
   hosts: all
   sudo: yes
   sudo_user: "{{remoteu}}"

@@ -5,11 +5,6 @@ setup_git_repo: yes
 git_branch: master
 
 
-# Database settings.
-db_user: "{{ application_name }}"
-db_name: "{{ application_name }}"
-db_password: password
-
 
 # Gunicorn settings. For the number of workers, a good rule to follow is
 # 2 x number of CPUs + 1
@@ -36,8 +31,8 @@ rabbitmq_server_name: "{{ inventory_hostname }}"
 rabbitmq_admin_user: admin
 rabbitmq_admin_password: password
 
-rabbitmq_application_vhost: "{{ application_name }}"
-rabbitmq_application_user: "{{ application_name }}"
+rabbitmq_application_vhost: "{{ application_directory }}"
+rabbitmq_application_user: "{{ application_directory }}"
 rabbitmq_application_password: password
 
 
