@@ -1,7 +1,3 @@
-# Database settings.
-db_user: "{{ application_name }}"
-db_name: "{{ application_name }}"
-db_password: passwd 
 
 rabbitmq_admin_password: dfe3xe<#s 
 rabbitmq_application_password: aedhxs3<# 
@@ -16,15 +12,21 @@ project_name: djangog
 application_name: mysite
 #version: vps_test
 version: HEAD
-
+# Database settings.
+db_password: passwd 
+ssl_key_passwd: passwd
 ssl_crt_file: "~/ssl_crt"
 ssl_key_file: "~/ssl_key"
-
-ssl_crt: "{{ lookup('file', ssl_crt_file) }}"
-ssl_key: "{{ lookup('file', ssl_key_file) }}"
-ssl_key_passwd: passwd
 
 py_ver: 3.4 
 # for python 2.7 this should be 2.7
 py_v: 3     
 # for python2.x leave this empty!
+
+db_user: "{{ application_name }}"
+db_name: "{{ application_name }}"
+
+ssl_crt: "{{ lookup('file', ssl_crt_file) }}"
+ssl_key: "{{ lookup('file', ssl_key_file) }}"
+
+
