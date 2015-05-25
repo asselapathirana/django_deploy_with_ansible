@@ -1,5 +1,7 @@
-
-db_password: 2pld$3ax#d
+# Database settings.
+db_user: "{{ application_name }}"
+db_name: "{{ application_name }}"
+db_password: passwd 
 
 rabbitmq_admin_password: dfe3xe<#s 
 rabbitmq_application_password: aedhxs3<# 

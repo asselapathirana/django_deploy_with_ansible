@@ -8,7 +8,6 @@
   vars:
     - update_apt_cache: yes
   vars_files:
-    - env_vars/base.yml
     - env_vars/{{ env }}.yml
     - ./pass_ex.yml # always use last
     - ../pass.yml # always use last
