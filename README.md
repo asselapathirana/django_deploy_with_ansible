@@ -5,10 +5,14 @@ Implementing on an Ubuntu VPS
 
 #how to add this repository to a django-project
 1. at the django project directory  
-git clone  <git remote url ending with .git> deploy
+ git clone  <git remote url ending with .git> deploy
 
 2. edit files ../development and ../pass.yml (if pass.yml is encrypted use ./ed ../pass.yml)
 (if there are no such files in the django project, copy from the templates provided in this drectory)
+ important: 
+	1. application_directory variables will be used to create the application's directory. Make sure it is unique (from other, already installed apps in the server.) to avoid accidental overwrite. 
+        2. application_name should match with your django app (directory wehre settigns.py lives!). 
+
 =======
 
 ssh-keygen -f "/home/pathirana/.ssh/known_hosts" -R  <host> 
