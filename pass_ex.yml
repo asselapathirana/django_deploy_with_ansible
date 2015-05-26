@@ -1,36 +1,38 @@
 
-rabbitmq_admin_password: dfe3xe<#s 
-rabbitmq_application_password: aedhxs3<# 
-flower_admin_password: LdDLS))Sx 
+rabbitmq_admin_password: xxxxx
+rabbitmq_application_password: xxxxx
+flower_admin_password: xxxxx
 
-remoteu: remoteu2
-remote_password: adpcxt$S 
-supassword: h8RsydhmL
+remoteu: remoteu3
+remote_password: xxxxx
+supassword: xxxxx
 
-git_repo: https://github.com/asselapathirana/djangog.git
-project_name: djangog
-application_directory: mysite
-# ^ this is the directory where the application will be installed. Need not to be the django application name (see below)
-application_name : mysite 
-# this should match with your django app name that would run 
+git_repo: https://github.com/asselapathirana/tdddjango.git 
+project_name: superlists
+application_name: superlists
+
+application_directory: "superlst"
+#^ appliation_directory is used to create the unix user to run supervisor. See note on db_user below. 
 #version: vps_test
 version: HEAD
-# Database settings.
-db_password: passwd 
-ssl_key_passwd: passwd
-ssl_crt_file: "~/ssl_crt"
-ssl_key_file: "~/ssl_key"
 
-py_ver: 3.4 
-# for python 2.7 this should be 2.7
-py_v: 3     
-#^ for python2.x leave this empty!
-pip_command: pip3
+db_password: xxxxx
+
+
+#######
 
 db_user: "{{ application_directory }}"
 db_name: "{{ application_directory }}"
+#^ if db_user changed to something other than appliaction_directory, peer authentication will break. 
+
+ssl_crt_file: "~/ssl/ssl.crt"
+ssl_key_file: "~/ssl/ssl.key"
 
 ssl_crt: "{{ lookup('file', ssl_crt_file) }}"
 ssl_key: "{{ lookup('file', ssl_key_file) }}"
+ssl_key_passwd: xxxxx
 
-
+py_ver: 3.4 
+# for python 2.7 this should be 2.7
+py_v:  3     
+# for python2.x leave this empty!
