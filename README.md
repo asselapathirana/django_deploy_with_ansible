@@ -65,4 +65,4 @@ Now point to these two files (ssl.key, ssl.crt) in ../pass.yml (ssl_key_file, ss
 # Caution with passwords etc. 
 1. Careful not to use characters with special meaning on unix in passwords (e.g. $) -- nasty errors (e.g. can not login to the database?)
 2. consider using django-sslify to enforce ssl. 
-
+ (see special configuration needed in nginx and requirement to add SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTOCOL', 'https')  to settings file)
