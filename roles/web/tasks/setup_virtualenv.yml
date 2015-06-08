@@ -7,9 +7,6 @@
 #- name: Make sure python {{py_ver}} virtual env is installed and gunicorn is there. 
 #  pip: virtualenv={{ virtualenv_path }} executable={{pip_command}}  name=gunicorn 
 #  tags: py 
-- name: Install requirements.txt specified packages
-  pip: virtualenv={{ virtualenv_path }} requirements={{project_path}}/requirements.txt
-  tags: py
 
 - name: Create the Gunicorn script file
   template: src=gunicorn_start.j2

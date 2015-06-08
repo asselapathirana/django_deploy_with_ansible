@@ -1,4 +1,4 @@
-
+run_django_syncdb: true
 rabbitmq_admin_password: xxxxx
 rabbitmq_application_password: xxxxx
 flower_admin_password: xxxxx
@@ -7,11 +7,11 @@ remoteu: remoteu3
 remote_password: xxxxx
 supassword: xxxxx
 
-git_repo: https://github.com/asselapathirana/tdddjango.git 
-project_name: superlists
-application_name: superlists
+git_repo: https://github.com/asselapathirana/djangocmst1
+project_name: djcmsmysite 
+application_name: djcmsmysite
 
-application_directory: "superlst"
+application_directory: "djcmsmysite"
 #^ appliation_directory is used to create the unix user to run supervisor. See note on db_user below. 
 #version: vps_test
 version: HEAD
