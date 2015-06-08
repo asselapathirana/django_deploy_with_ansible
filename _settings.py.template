@@ -4,4 +4,4 @@ DATABASES = {
     'default':
         {'HOST': 'localhost', 'USER': os.getenv('DATABASE_USER',''), 'PASSWORD': os.getenv('DATABASE_PASSWORD',''), 'ENGINE': 'django.db.backends.postgresql_psycopg2', 'PORT': '', 'NAME': os.getenv('DATABASE_NAME','')}
 }
-
+STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, '../static'))
