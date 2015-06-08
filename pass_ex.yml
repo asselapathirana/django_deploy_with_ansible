@@ -3,15 +3,15 @@ rabbitmq_admin_password: xxxxx
 rabbitmq_application_password: xxxxx
 flower_admin_password: xxxxx
 
-remoteu: remoteu3
+remoteu: remoteu4
 remote_password: xxxxx
 supassword: xxxxx
 
-git_repo: https://github.com/asselapathirana/djangocmst1
-project_name: djcmsmysite 
-application_name: djcmsmysite
+git_repo: https://github.com/asselapathirana/djangocms3
+project_name: djms 
+application_name: djms
 
-application_directory: "djcmsmysite"
+application_directory: "djms"
 #^ appliation_directory is used to create the unix user to run supervisor. See note on db_user below. 
 #version: vps_test
 version: HEAD

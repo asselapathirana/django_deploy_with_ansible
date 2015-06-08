@@ -1,0 +1,7 @@
+SECRET_KEY=os.getenv('SECRET_KEY','')
+
+DATABASES = {
+    'default':
+        {'HOST': 'localhost', 'USER': os.getenv('DATABASE_USER',''), 'PASSWORD': os.getenv('DATABASE_PASSWORD',''), 'ENGINE': 'django.db.backends.postgresql_psycopg2', 'PORT': '', 'NAME': os.getenv('DATABASE_NAME','')}
+}
+
