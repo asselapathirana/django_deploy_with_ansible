@@ -1,0 +1,3 @@
+cp ../adhoc.yml . 
+ansible-playbook -i ../development  ./adhoc.yml --vault-password-file ~/.vault_pass.txt $1 $2 $3 $4
+rm ./adhoc.yml

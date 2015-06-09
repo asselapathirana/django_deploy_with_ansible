@@ -51,6 +51,8 @@ ansible-playbook -i development sshkey.yml -u root  --vault-password-file ~/.vau
 ansible-playbook -i development  site.yml --vault-password-file ~/.vault_pass.txt 
 (or use ./setup)
 
+at this stage optionally, the ./adhoc command could be run. This command will copy ../adhoc.yml and run it. ../adhoc.yml can contain custom commands that may be needed to run after installation
+
 # ssl certificate
 1. Create a ssl certificate (e.g. Using StartSSL) and download it (ssl.key.encyrpted). Download certificate as ssl.crt.mine
 2. Decrypt the private key by using the password you entered when you created your key:
@@ -66,3 +68,4 @@ Now point to these two files (ssl.key, ssl.crt) in ../pass.yml (ssl_key_file, ss
 1. Careful not to use characters with special meaning on unix in passwords (e.g. $) -- nasty errors (e.g. can not login to the database?)
 2. consider using django-sslify to enforce ssl. 
  (see special configuration needed in nginx and requirement to add SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTOCOL', 'https')  to settings file)
+

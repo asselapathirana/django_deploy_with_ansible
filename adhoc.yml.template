@@ -1,0 +1,24 @@
+---
+
+- name: Run ad-hoc commands needed by specific app
+  hosts: webservers
+  sudo: yes
+  sudo_user: "{{application_directory}}" 
+  remote_user: "{{remoteu}}"
+  vars:
+     - dumb: true
+
+  vars_files:
+     - env_vars/{{ env }}.yml
+     - roles/web/vars/main.yml
+     - ./pass_ex.yml 
+     - ../pass.yml # always use last
+     
+
+  tasks: 
+  - name: update player.swl
+    get_url: url=http://github.com/FlashJunior/OSFlashVideoPlayer/raw/master/player.swf dest="{{virtualenv_path}}/static/cms/swf/player.swf" force=yes
+  
+
+
+  
