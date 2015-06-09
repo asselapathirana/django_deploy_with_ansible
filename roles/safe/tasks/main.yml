@@ -1,0 +1,7 @@
+---
+
+- stat: path="/webapps/{{application_directory}}"
+  register: p
+
+- fail:  msg="/webapps/{{application_directory}} directory exists. I quit."
+  when: p.stat.isdir is defined and p.stat.isdir
