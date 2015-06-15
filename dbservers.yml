@@ -13,7 +13,7 @@
     - ../pass.yml # always use last
 
   roles:
-    - safe
+#    - safe
     - pip
     - base
     - db

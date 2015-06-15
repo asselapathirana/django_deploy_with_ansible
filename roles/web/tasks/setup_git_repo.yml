@@ -4,7 +4,8 @@
   git: repo={{ git_repo }}
        version="{{ git_branch }}"   
        dest={{ project_path }}
-       #assela accept_hostkey=yes
+       recursive=no
+       #accept_hostkey=yes
   when: setup_git_repo is defined and setup_git_repo
   tags: git
 

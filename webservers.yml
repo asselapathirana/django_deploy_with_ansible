@@ -14,7 +14,7 @@
 
 
   roles:
-    - safe
+#    - safe
     - pip
     - base
     - web
