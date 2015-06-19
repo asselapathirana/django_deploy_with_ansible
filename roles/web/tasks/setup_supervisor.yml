@@ -7,7 +7,7 @@
   tags: sup
 
 - name: Re-read the Supervisor config files
-  supervisorctl: name={{ application_name }} state=present
+  supervisorctl: name={{ application_directory }} state=present
   tags: sup
 
 - name: Restart Supervisor

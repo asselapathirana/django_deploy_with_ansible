@@ -36,3 +36,5 @@ py_ver: 3.4
 # for python 2.7 this should be 2.7
 py_v:  3     
 # for python2.x leave this empty!
+
+django_settings_file: "{{ application_name }}.setting"
