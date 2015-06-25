@@ -69,3 +69,10 @@ Now point to these two files (ssl.key, ssl.crt) in ../pass.yml (ssl_key_file, ss
 2. consider using django-sslify to enforce ssl. 
  (see special configuration needed in nginx and requirement to add SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTOCOL', 'https')  to settings file)
 
+
+# Elasticsearch
+
+manually configure elasticsearch to use small memory. 
+
+http://blog.lavoie.sl/2012/09/configure-elasticsearch-on-a-single-host.html
+
