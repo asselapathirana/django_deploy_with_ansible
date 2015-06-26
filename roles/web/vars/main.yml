@@ -37,3 +37,5 @@ django_environment:
   BROKER_URL: "{{ broker_url|default(omit) }}"
   HOSTS1: "{{hosts1}}"
   HOSTS1: "{{hosts2}}"
+  WAGTAILSEARCH_URL: {{wagtailsearch_url}}
+  WAGTAILSEARCH_INDEX: {{wagtailsearch_index}}
