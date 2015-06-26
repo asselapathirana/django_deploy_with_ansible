@@ -3,15 +3,15 @@ rabbitmq_admin_password: xxxxx
 rabbitmq_application_password: xxxxx
 flower_admin_password: xxxxx
 
-remoteu: remoteu4
+remoteu: remoteu5
 remote_password: xxxxx
 supassword: xxxxx
 
-git_repo: https://github.com/asselapathirana/djangocms3
-project_name: djms 
-application_name: djms
+git_repo: https://github.com/asselapathirana/wagtaildemo.git  
+project_name: wagtail2
+application_name: wagtaildemo
 
-application_directory: "djms"
+application_directory: "wagtail2"
 #^ appliation_directory is used to create the unix user to run supervisor. See note on db_user below. 
 #version: vps_test
 version: HEAD
@@ -37,4 +37,8 @@ py_ver: 3.4
 py_v:  3     
 # for python2.x leave this empty!
 
-django_settings_file: "{{ application_name }}.setting"
+
+django_settings_file: "{{ application_name }}.settings.production"
+
+hosts1: "teste.pathirana.net" 
+hosts2: "teste.pathirana.net"
