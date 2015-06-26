@@ -4,7 +4,7 @@
   git: repo={{ git_repo }}
        version="{{ git_branch }}"   
        dest={{ project_path }}
-       recursive=no
+       recursive=yes
        #accept_hostkey=yes
   when: setup_git_repo is defined and setup_git_repo
   tags: git
