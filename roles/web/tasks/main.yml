@@ -15,13 +15,13 @@
   tags: deploy
 
 - include: set_file_permissions.yml
-  tags: deploy1
+  tags: deploy
 
 - include: setup_supervisor.yml
   tags: supervisor
 
 - include: set_file_permissions.yml
-  tags: deploy1
+  tags: deploy
 
 - include: setup_nginx.yml
   tags: nginx
