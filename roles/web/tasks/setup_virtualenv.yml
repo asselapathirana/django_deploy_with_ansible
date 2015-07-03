@@ -8,14 +8,26 @@
 #  pip: virtualenv={{ virtualenv_path }} executable={{pip_command}}  name=gunicorn 
 #  tags: py 
 
-- name: Create the Gunicorn script file
+- name: Create the Gunicorn script file - WHEN APP IS NON EMPTY
   template: src=gunicorn_start.j2
             dest={{ virtualenv_path }}/bin/gunicorn_start
             owner={{ gunicorn_user }}
             group={{ gunicorn_group }}
             mode=0755
             backup=yes
+  when: not (empty_application_name is defined and empty_application_name)
   tags: deploy
+
+- name: Create the Gunicorn script file - WHEN APP IS EMPTY
+  template: src=gunicorn_start_4empty.j2
+            dest={{ virtualenv_path }}/bin/gunicorn_start
+            owner={{ gunicorn_user }}
+            group={{ gunicorn_group }}
+            mode=0755
+            backup=yes
+  when: empty_application_name is defined and empty_application_name 
+  tags: deploy
+
 
 - name: Create the application log folder
   file: path={{ application_log_dir }}
